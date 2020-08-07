@@ -41,17 +41,39 @@
             </aside>
             <main class="col-md-9">
                 <section id="current-weather">
-                    <table>
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>
-                                    <h1 id="city-name">
-                                        Baltimore, MD
+                                    <h1>
+                                        <span id="city-name"></span>,
+                                        <span id="country-name"></span>
                                     </h1>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Temperature:</th>
+                                <td><span id="temp"></span>&deg;</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Humidity:</th>
+                                <td>
+                                    <span id="humidity"></span>%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Wind:
+                                </th>
+                                <td>
+                                    <span id="wind-speed"></span>
+                                    MPH at
+                                    <span id="wind-degrees"></span>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </section>
                 <section id="forecast"></section>
