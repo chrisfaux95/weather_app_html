@@ -12,6 +12,14 @@ function getWeather(cityName) {
 
 function pushWeather(response) {
     console.log(response);
+    $("#city-name").text(response.name);
+    $("#country-name").text(response.sys.country);
+    $("#temp").text(kToF(response.main.temp));
+    $("#humidity").text(response.main.humidity);
+    $("#wind-speed").text(response.wind.speed);
+    $("#wind-degrees").text(response.wind.deg);
+
+}
 
 function kToF(temp) {
     return ((temp * (9 / 5)) - 459.67).toFixed(2);
