@@ -24,3 +24,11 @@ function pushWeather(response) {
 function kToF(temp) {
     return ((temp * (9 / 5)) - 459.67).toFixed(2);
 }
+
+
+$("#search-button").on("click", function(event){
+    event.preventDefault();
+    let cityName = $("#search-input").val().trim();
+    // console.log(cityName);
+    getWeather(cityName);
+})
