@@ -13,26 +13,57 @@
 </head>
 
 <body>
-    <header>
+    <header class="jumbotron">
         <h1>Weather Dashboard</h1>
     </header>
-    <main class="container">
+    <hr>
+    <div class="container-fluid">
         <div class="row">
             <aside class="col-md-3">
-                <div class="list-group">
-                    <button class="list-group-item list-group-item-primary btn btn-primary">
-                        Baltimore, MD
+                <form id="search-area">
+                    <label for="search-input">
+                        Search for a city:
+                    </label>
+                    <input type="text" name="search-input" , id="search-input">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
                     </button>
+                </form>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Baltimore, MD</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Tokyo, Japan</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">London, UK</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Moscow,
+                        Russia</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Los Angeles,
+                        CA</a>
                 </div>
             </aside>
-            <section class="col-md-9">
-
-            </section>
+            <main class="col-md-9">
+                <section id="current-weather">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h1 id="city-name">
+                                        Baltimore, MD
+                                    </h1>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+                <section id="forecast"></section>
+            </main>
         </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    </div>
+    <!-- IMPORTED SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- LOCAL SCRIPTS -->
+    <script src="assets/scripts/scripts.js"> </script>
 </body>
 
 </html>
