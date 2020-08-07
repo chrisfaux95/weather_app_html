@@ -12,4 +12,7 @@ function getWeather(cityName) {
 
 function pushWeather(response) {
     console.log(response);
+
+function kToF(temp) {
+    return ((temp * (9 / 5)) - 459.67).toFixed(2);
 }
