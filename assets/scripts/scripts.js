@@ -10,3 +10,6 @@ function getWeather(cityName) {
     })
 }
 
+function pushWeather(response) {
+    console.log(response);
+}
