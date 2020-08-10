@@ -1,0 +1,10 @@
+.card {
+    min-width: 10em;
+    flex: 0 0 auto;
+}
+
+#forecast{
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
