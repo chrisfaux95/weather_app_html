@@ -1,3 +1,4 @@
+var key = "fc9370f26192d02c666de9df21b1cac5";
 var lsKey = "cities";
 
 function getWeather(cityName) {
