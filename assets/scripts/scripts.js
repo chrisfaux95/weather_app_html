@@ -12,7 +12,7 @@ function getWeather(cityName) {
 }
 
 function pushWeather(response) {
-    console.log(response);
+    // console.log(response);
     $("#city-name").text(response.name);
     $("#country-name").text(response.sys.country);
     $("#date").text(moment().format("l"));
@@ -21,7 +21,7 @@ function pushWeather(response) {
     $("#wind-speed").text(response.wind.speed);
     $("#wind-degrees").text(response.wind.deg);
     getForecastAndUV(response);
-    addToList(response.name);
+    // addToList(response.name);
 
 }
 
@@ -49,7 +49,7 @@ function getLocationList() {
 }
 
 function getForecastAndUV(response) {
-    let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${key}`
+    let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${key}&exclude=hourly,minutely`
     console.log(queryURL);
     $.ajax({
         url: queryURL,
