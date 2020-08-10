@@ -41,7 +41,14 @@ function getForecast(cityName) {
 
 
 function addToList(cityName) {
-
+    let storedList = JSON.parse(localStorage.getItem(lsKey));
+    if (storedList === null) {
+        storedList = []
+    }
+    if (!storedList.includes(cityName)) {
+        storedList.push(cityName)
+    }
+    localStorage.setItem(lsKey, JSON.stringify(storedList))
 }
 
 function getLocationList() {
