@@ -40,21 +40,6 @@ function getForecast(cityName) {
 }
 
 
-function addToList(cityName) {
-    let storedList = JSON.parse(localStorage.getItem(lsKey));
-    if (storedList === null) {
-        storedList = []
-    }
-    if (!storedList.includes(cityName)) {
-        storedList.push(cityName)
-    }
-    localStorage.setItem(lsKey, JSON.stringify(storedList))
-}
-
-function getLocationList() {
-
-}
-
 function getForecastAndUV(response) {
     let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${key}&exclude=hourly,minutely`
     console.log(queryURL);
@@ -93,7 +78,54 @@ function makeDayCard(day) {
 function pushOneCallUV(uvi) {
     $("#uvi").text(uvi);
     //INSERT CODE TO CHANGE COLOR HERE
+
+function initList() {
+    getList();
+    if (cityList === null) {
+        cityList = []
+        cityList.push("Washington D.C.");
+        saveList();
+        
+    }
+    getWeather(cityList[cityList.length - 1])
+    pushList();
 }
+
+function getList() {
+    cityList = JSON.parse(localStorage.getItem(lsKey));
+}
+
+function saveList(){
+
+    localStorage.setItem(lsKey, JSON.stringify(cityList));
+    // console.log(cityList);
+}
+
+function addToList(cityName) {
+
+    if (!cityList.includes(cityName)) {
+        cityList.push(cityName);
+    }
+    saveList();
+    pushList();
+}
+
+function pushList() {
+   
+    $("#locales").empty()
+    cityList.forEach(element => {
+        let cityItem = $("<btn>").text(element);
+        // cityItem.attr("href", "#");
+        cityItem.attr("data-city", element);
+        cityItem.addClass("list-group-item list-group-item-action list-group-item-primary");
+        $("#locales").prepend(cityItem);
+    })
+
+}
+
+
+
+
 
 
 $("#search-button").on("click", function (event) {
