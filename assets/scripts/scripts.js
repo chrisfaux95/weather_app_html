@@ -44,7 +44,7 @@ function addToList(cityName) {
 
 }
 
-$("#search-button").on("click", function(event){
+$("#search-button").on("click", function (event) {
     event.preventDefault();
     let cityName = $("#search-input").val().trim();
     // console.log(cityName);
