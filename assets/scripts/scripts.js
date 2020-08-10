@@ -85,7 +85,7 @@ function makeDayCard(day) {
 
     let humidity = $("<p>").text(`Humidity: ${day.humidity}%`).addClass("card-text");
 
-    cardBody.append(date, temp, humidity);
+    cardBody.append(date, $("<hr>"), temp, humidity);
     dayCard.append(cardBody);
     dayCard.appendTo($("#forecast"));
 }
