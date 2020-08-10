@@ -75,7 +75,7 @@ function pushOneCallForecast(forecast) {
     }
 }
 
-function makeDayCard(day){
+function makeDayCard(day) {
     let dayCard = $("<div>").addClass("card bg-primary");
     let cardBody = $("<div>").addClass("card-body");
     let date = $("<h5>").addClass("card-title");
