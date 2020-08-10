@@ -70,7 +70,7 @@ function getForecastAndUV(response) {
 
 function pushOneCallForecast(forecast) {
     $("#forecast").empty()
-    for (const i in forecast){
+    for (let i = 1; i < 6; i++) {
         makeDayCard(forecast[i]);
     }
 }
