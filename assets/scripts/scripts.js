@@ -26,7 +26,7 @@ function kToF(temp) {
     return ((temp * (9 / 5)) - 459.67).toFixed(2);
 }
 
-function getForecast() {
+function getForecast(cityName) {
     let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + key;
     $.ajax({
         url: queryURL,
