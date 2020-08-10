@@ -21,7 +21,7 @@ function pushWeather(response) {
     $("#wind-speed").text(response.wind.speed);
     $("#wind-degrees").text(response.wind.deg);
     getForecastAndUV(response);
-    // addToList(response.name);
+    addToList(response.name);
 
 }
 
