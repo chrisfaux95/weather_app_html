@@ -40,7 +40,18 @@ function pushForecast() {
 
 }
 
-function addToList(cityName) {
+function getForecastAndUV(response) {
+    let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${key}`
+    console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(r => {
+        pushOneCallForecast(r.daily);
+        pushOneCallUV(r.current.uvi);
+        // console.log(r);
+    });
+}
 
 }
 
