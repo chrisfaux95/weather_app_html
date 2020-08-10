@@ -66,7 +66,21 @@ function pushOneCallForecast(forecast) {
     for (const i in forecast){
         makeDayCard(forecast[i]);
     }
-    
+}
+
+function makeDayCard(day){
+    let dayCard = $("<div>").addClass("card bg-primary");
+    let cardBody = $("<div>").addClass("card-body");
+    let date = $("<h5>").addClass("card-title");
+    date.text(moment.unix(day.dt).format("l"));
+
+    let temp = $("<p>").text(`Temp: ${kToF(parseInt(day.temp.day))}°F`).addClass("card-text");
+
+    let humidity = $("<p>").text(`Humidity: ${day.humidity}%`).addClass("card-text");
+
+    cardBody.append(date, temp, humidity);
+    dayCard.append(cardBody);
+    dayCard.appendTo($("#forecast"));
 }
 
 function pushOneCallUV(uvi) {
