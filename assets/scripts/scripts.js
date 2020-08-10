@@ -83,17 +83,32 @@ function pushOneCallUV(uvi) {
     uviSpan.text(uvi);
     let bgc = "background-color"
     //INSERT CODE TO CHANGE COLOR HERE
-    if (uvi >= 0 && uvi < 3){
+    if (uvi >= 0 && uvi < 3) {
         //if uv index is low:
-        uviSpan.css(bgc, "green");
-    } else if(uvi >= 3 && uvi < 6) {
-        uviSpan.css(bgc, "yellow");
-    } else if(uvi >= 6 && uvi < 8) {
-        uviSpan.css(bgc, "orange");
-    } else if(uvi >= 8 && uvi < 11) {
-        uviSpan.css(bgc, "red")
+        uviSpan.css({
+            "background-color": "green",
+            color: "black"
+        });
+    } else if (uvi >= 3 && uvi < 6) {
+        uviSpan.css({
+            "background-color": "yellow",
+            color: "black"
+        });
+    } else if (uvi >= 6 && uvi < 8) {
+        uviSpan.css({
+            "background-color": "orange",
+            color: "black"
+        });
+    } else if (uvi >= 8 && uvi < 11) {
+        uviSpan.css({
+            "background-color": "red",
+            color: "black"
+        })
     } else {
-        uviSpan.css(bgc, "purple");
+        uviSpan.css({
+            "background-color": "purple",
+            color: "white"
+        });
     }
 }
 
