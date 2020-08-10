@@ -53,7 +53,15 @@ function getForecastAndUV(response) {
     });
 }
 
+function pushOneCallForecast(forecast) {
+    
 }
+
+function pushOneCallUV(uvi) {
+    $("#uvi").text(uvi);
+    //INSERT CODE TO CHANGE COLOR HERE
+}
+
 
 $("#search-button").on("click", function (event) {
     event.preventDefault();
