@@ -62,6 +62,10 @@ function getForecastAndUV(response) {
 }
 
 function pushOneCallForecast(forecast) {
+    $("#forecast").empty()
+    for (const i in forecast){
+        makeDayCard(forecast[i]);
+    }
     
 }
 
