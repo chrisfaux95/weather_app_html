@@ -45,7 +45,7 @@ function getForecast(cityName) {
 
 function getForecastAndUV(response) {
     let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.coord.lat}&lon=${response.coord.lon}&appid=${key}&exclude=hourly,minutely`
-    console.log(queryURL);
+    // console.log(queryURL);
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -118,7 +118,7 @@ function initList() {
         cityList = []
         cityList.push("Washington D.C.");
         saveList();
-        
+
     }
     getWeather(cityList[cityList.length - 1])
     pushList();
@@ -128,7 +128,7 @@ function getList() {
     cityList = JSON.parse(localStorage.getItem(lsKey));
 }
 
-function saveList(){
+function saveList() {
 
     localStorage.setItem(lsKey, JSON.stringify(cityList));
     // console.log(cityList);
@@ -144,7 +144,7 @@ function addToList(cityName) {
 }
 
 function pushList() {
-   
+
     $("#locales").empty()
     cityList.forEach(element => {
         let cityItem = $("<btn>").text(element);
@@ -156,8 +156,9 @@ function pushList() {
 
 }
 
+function pushToEndOfList(element) {
 
-
+}
 
 
 
@@ -168,9 +169,9 @@ $("#search-button").on("click", function (event) {
     getWeather(cityName);
 });
 
-$(document).on("click",".list-group-item", getWeatherBtn);
+$(document).on("click", ".list-group-item", getWeatherBtn);
 
-function getWeatherBtn(){
+function getWeatherBtn() {
     let cityName = $(this).attr("data-city");
     getWeather(cityName);
 }
