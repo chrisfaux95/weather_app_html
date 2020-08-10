@@ -14,6 +14,7 @@ function pushWeather(response) {
     console.log(response);
     $("#city-name").text(response.name);
     $("#country-name").text(response.sys.country);
+    $("#date").text(moment().format("l"));
     $("#temp").text(kToF(response.main.temp));
     $("#humidity").text(response.main.humidity);
     $("#wind-speed").text(response.wind.speed);
