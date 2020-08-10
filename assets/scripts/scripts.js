@@ -133,4 +133,15 @@ $("#search-button").on("click", function (event) {
     let cityName = $("#search-input").val().trim();
     // console.log(cityName);
     getWeather(cityName);
+});
+
+$(document).on("click",".list-group-item", getWeatherBtn);
+
+function getWeatherBtn(){
+    let cityName = $(this).attr("data-city");
+    getWeather(cityName);
+}
+
+$(document).ready(x => {
+    initList();
 })
