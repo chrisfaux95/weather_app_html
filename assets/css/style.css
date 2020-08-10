@@ -1,6 +1,7 @@
 .card {
     min-width: 10em;
     flex: 0 0 auto;
+    margin: auto 1em;
 }
 
 #forecast{
