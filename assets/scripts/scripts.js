@@ -76,8 +76,23 @@ function makeDayCard(day) {
 }
 
 function pushOneCallUV(uvi) {
-    $("#uvi").text(uvi);
+    let uviSpan = $("#uvi");
+    uviSpan.text(uvi);
+    let bgc = "background-color"
     //INSERT CODE TO CHANGE COLOR HERE
+    if (uvi >= 0 && uvi < 3){
+        //if uv index is low:
+        uviSpan.css(bgc, "green");
+    } else if(uvi >= 3 && uvi < 6) {
+        uviSpan.css(bgc, "yellow");
+    } else if(uvi >= 6 && uvi < 8) {
+        uviSpan.css(bgc, "orange");
+    } else if(uvi >= 8 && uvi < 11) {
+        uviSpan.css(bgc, "red")
+    } else {
+        uviSpan.css(bgc, "purple");
+    }
+}
 
 function initList() {
     getList();
