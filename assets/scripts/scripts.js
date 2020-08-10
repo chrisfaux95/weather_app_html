@@ -36,7 +36,12 @@ function getForecast(cityName) {
     })
 }
 
-function pushForecast() { 
+
+function addToList(cityName) {
+
+}
+
+function getLocationList() {
 
 }
 
